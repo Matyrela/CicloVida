@@ -13,6 +13,31 @@ namespace ClassLibrary
     /// </summary>
     public class Train
     {
+        private static int count = 0;
+
+
+        public Train(String name){
+
+            Name = name;
+            count++;
+        }
+
+        public string Name { get; set; }
+        public int cantidad {
+            get{
+                return count;
+            }
+            set{
+                count = value;
+            }
+        }
+
+        ~Train(){
+            count--;
+        }
+
+
+
         /// <summary>
         /// Obtiene un valor que indica si las maquinas del tren han sido encendidas o no.
         /// </summary>
